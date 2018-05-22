@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	"github.com/micro/go-micro"
+	"github.com/micro/go-micro/server"
 	pb "github.com/zzayne/shipper/vessel-service/proto/vessel"
 )
 
@@ -52,6 +53,7 @@ func main() {
 		micro.Name("go.micro.srv.vessel"),
 		micro.Version("latest"),
 	)
+	server.Init()
 
 	pb.RegisterVesselServiceHandler(srv.Server(), &service{repo})
 
