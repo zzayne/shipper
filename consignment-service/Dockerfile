@@ -4,9 +4,6 @@ WORKDIR /go/src/github.com/zzayne/shipper/consignment-service
 
 COPY .  .
 
-ENV  http_proxy http://duotai:pRPfSOcntV@hilton.h.timonit.cn:18102
-ENV  https_proxy http://duotai:pRPfSOcntV@hilton.h.timonit.cn:18102
-
 RUN go get -u github.com/golang/dep/cmd/dep
 
 RUN dep init && dep ensure
